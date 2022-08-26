@@ -46,9 +46,9 @@ CONF_String(priority_networks, "");
 //// tcmalloc gc parameter
 ////
 // Min memory for TCmalloc, when used memory is smaller than this, do not returned to OS.
-CONF_mInt64(tc_use_memory_min, "10737418240");
+CONF_mInt64(tc_use_memory_min, "0");
 // free memory rate.[0-100]
-CONF_mInt64(tc_free_memory_rate, "20");
+CONF_mInt64(tc_free_memory_rate, "0");
 // tcmalloc gc period, default 60, it should be between [1, 180]
 CONF_mInt64(tc_gc_period, "60");
 
@@ -297,6 +297,7 @@ CONF_mInt32(compaction_trace_threshold, "60");
 CONF_Int64(vertical_compaction_max_columns_per_group, "5");
 
 CONF_Bool(enable_event_based_compaction_framework, "false");
+CONF_Bool(enable_check_string_lengths, "true");
 // 5GB
 CONF_mInt64(min_cumulative_compaction_size, "5368709120");
 // 20GB
